@@ -218,3 +218,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Datasets and whole-slide images
+feature/
+slide/
+*.h5
+*.tif
+*.tiff
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Local environments
+.venv/
+.env
+
+# MACOS Metadata from original
+.DS_Store
