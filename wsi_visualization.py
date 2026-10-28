@@ -191,6 +191,15 @@ def visualize_wsi_attention(
         prediction = int(probabilities.argmax())
         fig.suptitle(f'{slide_id} | Ground truth: {class_names[label]} | '
                      f'Prediction: {class_names[prediction]} | P(tumor)={probabilities[1]:.3f}')
+
+        # Adding code to automatically save the plots
+        output_dir = Path(project_dir) / 'results' / 'baseline' / 'C16'
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        fig.savefig(output_dir / f'{slide_id}_attention.png',
+                    dpi=200, bbox_inches='tight')
+        
+        
         plt.show()
         print(f'{slide_id}: {len(weights):,} patches; attention sum={weights.sum():.6f}; '
               f'{len(contours)} annotation contours' + (' (no XML available)' if not contours else ''))
