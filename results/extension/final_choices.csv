@@ -1,0 +1,4 @@
+dataset,K,aggregation,mask_prob,loss_type
+C16,6,mean,0.0,ce
+C17,5,concat,0.0,ce
+BRACS,5,mean,0.6,ce
